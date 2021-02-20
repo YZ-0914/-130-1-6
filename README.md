@@ -198,3 +198,177 @@ int main()
 		printf("放弃确认\n");
 		return 0;
 }
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+
+//7、题目描述：KIKI学会了printf在屏幕输出信息，他想输出一架小飞机，请帮他编写程序输出这架小飞机。
+//输入描述：无
+//输出描述：
+//    **
+//    **
+//************
+//************
+//   *   *
+//   *   *
+//int main()
+//{
+//	printf("     **     \n");
+//	printf("     **     \n");
+//	printf("************\n");
+//	printf("************\n");
+//	printf("    *  *    \n");
+//	printf("    *  *    \n");
+//	return 0;
+//
+//}
+
+//8、题目描述：BoBo写了一个十六进制整数ABCDEF，他问KiKi对应的十进制整数是多少。
+//输入描述：无
+//输出描述：十六进制整数ABCDEF对应的十进制整数，所占域宽为15.
+//备注：printf可以使用使用格式控制串“%md"输出域宽为m的十进制整数。
+//int main()
+//{
+//	printf("%15d\n", 0xABCDEF);
+//	return 0;
+//}
+//域宽
+//int main()
+//{
+//	printf("%d\n", 15);
+//	printf("%4d\n", 15);
+//	return 0;
+//}
+
+//9、题目描述：KIKI写了一个输出“Hello world！"的程序，BOBO老师告诉他printf函数有返回值，你能帮助他写一个程序输出printf("Hello world!")的返回值吗？
+//输入描述：无
+//输出描述：包括两行：
+//第一行为“Hello world!"
+//第二行为printf("Hello world!")调用后的返回值
+
+//int main()
+//{
+//	int ret=printf("Hello world!");
+//	printf("\n");
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int ret = printf("Hello world!");
+//	printf("\n%d\n", ret);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	printf("\n%d\n", printf("Hello world!"));
+//	return 0;
+//}
+//
+//int main()
+//{
+//	printf("%d", printf("%d", printf("%d",43)));
+//	//4321
+//	return 0;
+//}
+
+//10、题目描述：依次输入一个学生的学号，以及3科（C语言，数学，英语）成绩，在屏幕上输出该学生的学号，3科成绩。
+//输入描述：学号及3科成绩，学号和成绩之间用英文分号隔开，成绩之间用英文逗号隔开。
+//输出描述：学号，3科成绩，输出格式详见输出样例。
+//示例：输入  17140216；80.845，90.55，100.00
+//输出 The each subject score of No.17140216 is 80.85, 90.55, 100.00
+//int main()
+//{
+//	int num = 0;
+//	float c_score = 0.0;
+//	float math_score = 0.0;
+//	float eng_score = 0.0;
+//	scanf("%d;%f,%f,%f", &num, &c_score, &math_score, &eng_score);
+//	printf("The each subject score of  No.%d is %.2f,%.2f,%.2f.\n", num, c_score, math_score, eng_score);
+//	return 0;
+//}
+
+//11、题目描述：从键盘任意输入一个字符，编程判断是否是字母（包括大小写）。
+//输入描述：多组输入，每行输入包括一个字符。
+//输出描述：针对每行输入，输出该字符是字母（YES）或不是（NO).。
+//示例：输入H  9    输出YES   NO
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		//判断字母
+//		if ((ch >= 'A'&&ch <= 'Z') || (ch >= 'a'&&ch <= 'z'))
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//		//清理掉\n
+//		getchar();
+//		
+//	}
+//	return 0;
+//}
+#include <ctype.h>
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		//判断字母
+//		//if ((ch >= 'A'&&ch <= 'Z') || (ch >= 'a'&&ch <= 'z'))
+//		if (isalpha(ch))
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//		//清理掉\n
+//		getchar();
+//
+//	}
+//	return 0;
+//}
+
+//12、题目描述：输入一个字符，用它构造一个三角形金字塔。
+//输入描述：输入只有一行，一个字符。
+//输出描述：该字符构成的三角形金字塔。
+//示例：输入1
+//输出
+//       1
+//      1 1
+//    1  1  1
+//  1  1   1   1
+//1  1  1   1   1
+
+int main()
+{
+	char ch = 0;
+	scanf("%c", &ch);
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		//空格
+		int j = 0;
+		for (j = 0; j < 5 - i - 1; j++)
+		{
+			printf(" ");
+
+		}
+		//数字
+		for (j = 0; j <= i; j++)
+		{
+			printf("%c ", ch);
+		}
+		printf("\n");
+	}
+	return 0;
+}
