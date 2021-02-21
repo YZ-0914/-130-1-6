@@ -198,3 +198,285 @@ int main()
 		printf("放弃确认\n");
 		return 0;
 }
+
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+
+//7、题目描述：KIKI学会了printf在屏幕输出信息，他想输出一架小飞机，请帮他编写程序输出这架小飞机。
+//输入描述：无
+//输出描述：
+//    **
+//    **
+//************
+//************
+//   *   *
+//   *   *
+//int main()
+//{
+//	printf("     **     \n");
+//	printf("     **     \n");
+//	printf("************\n");
+//	printf("************\n");
+//	printf("    *  *    \n");
+//	printf("    *  *    \n");
+//	return 0;
+//
+//}
+
+//8、题目描述：BoBo写了一个十六进制整数ABCDEF，他问KiKi对应的十进制整数是多少。
+//输入描述：无
+//输出描述：十六进制整数ABCDEF对应的十进制整数，所占域宽为15.
+//备注：printf可以使用使用格式控制串“%md"输出域宽为m的十进制整数。
+//int main()
+//{
+//	printf("%15d\n", 0xABCDEF);
+//	return 0;
+//}
+//域宽
+//int main()
+//{
+//	printf("%d\n", 15);
+//	printf("%4d\n", 15);
+//	return 0;
+//}
+
+//9、题目描述：KIKI写了一个输出“Hello world！"的程序，BOBO老师告诉他printf函数有返回值，你能帮助他写一个程序输出printf("Hello world!")的返回值吗？
+//输入描述：无
+//输出描述：包括两行：
+//第一行为“Hello world!"
+//第二行为printf("Hello world!")调用后的返回值
+
+//int main()
+//{
+//	int ret=printf("Hello world!");
+//	printf("\n");
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int ret = printf("Hello world!");
+//	printf("\n%d\n", ret);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	printf("\n%d\n", printf("Hello world!"));
+//	return 0;
+//}
+//
+//int main()
+//{
+//	printf("%d", printf("%d", printf("%d",43)));
+//	//4321
+//	return 0;
+//}
+
+//10、题目描述：依次输入一个学生的学号，以及3科（C语言，数学，英语）成绩，在屏幕上输出该学生的学号，3科成绩。
+//输入描述：学号及3科成绩，学号和成绩之间用英文分号隔开，成绩之间用英文逗号隔开。
+//输出描述：学号，3科成绩，输出格式详见输出样例。
+//示例：输入  17140216；80.845，90.55，100.00
+//输出 The each subject score of No.17140216 is 80.85, 90.55, 100.00
+//int main()
+//{
+//	int num = 0;
+//	float c_score = 0.0;
+//	float math_score = 0.0;
+//	float eng_score = 0.0;
+//	scanf("%d;%f,%f,%f", &num, &c_score, &math_score, &eng_score);
+//	printf("The each subject score of  No.%d is %.2f,%.2f,%.2f.\n", num, c_score, math_score, eng_score);
+//	return 0;
+//}
+
+//11、题目描述：从键盘任意输入一个字符，编程判断是否是字母（包括大小写）。
+//输入描述：多组输入，每行输入包括一个字符。
+//输出描述：针对每行输入，输出该字符是字母（YES）或不是（NO).。
+//示例：输入H  9    输出YES   NO
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		//判断字母
+//		if ((ch >= 'A'&&ch <= 'Z') || (ch >= 'a'&&ch <= 'z'))
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//		//清理掉\n
+//		getchar();
+//		
+//	}
+//	return 0;
+//}
+#include <ctype.h>
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		//判断字母
+//		//if ((ch >= 'A'&&ch <= 'Z') || (ch >= 'a'&&ch <= 'z'))
+//		if (isalpha(ch))
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//		//清理掉\n
+//		getchar();
+//
+//	}
+//	return 0;
+//}
+
+//12、题目描述：输入一个字符，用它构造一个三角形金字塔。
+//输入描述：输入只有一行，一个字符。
+//输出描述：该字符构成的三角形金字塔。
+//示例：输入1
+//输出
+//       1
+//      1 1
+//    1  1  1
+//  1  1   1   1
+//1  1  1   1   1
+
+int main()
+{
+	char ch = 0;
+	scanf("%c", &ch);
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		//空格
+		int j = 0;
+		for (j = 0; j < 5 - i - 1; j++)
+		{
+			printf(" ");
+
+		}
+		//数字
+		for (j = 0; j <= i; j++)
+		{
+			printf("%c ", ch);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+
+//输入数字
+//int main()
+//{
+//	//输入
+//	int n = 0;
+//	scanf("%d", &n);
+//	//输出
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		//打印一行
+//		//先打印空格
+//		int j = 0;
+//		for (j = 0; j < 5 - i - 1; j++)
+//		{
+//			printf(" ");
+//		}
+//	    //再打印
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf("%d ",n);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//输入字符
+//int main()
+//{
+//	//输入
+//	char n = 0;
+//	scanf("%c", &n);
+//	//输出
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		//打印一行
+//		//先打印空格
+//		int j = 0;
+//		for (j = 0; j < 5 - i - 1; j++)
+//		{
+//			printf(" ");
+//		}
+//		//再打印
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf("%c ", n);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//13、题目描述：BOBO教KIKI字符常量或字符变量表示的字符在内存中以ASCII码形式存储。BOBO出了一个问题给KIKI，转换以下ASCII码为对应字符并输出他们。
+//73，32，99，97，110，32，100，111，32，105，116，33
+//输入描述：无
+//输出描述：转换输出题目中给出的所有ASCII到对应的字符
+//int main()
+//{
+//	char arr[] = { 73, 32, 99, 97, 110, 32, 100, 111, 32, 105, 116, 33 };
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%c", arr[i]);
+//	}
+//	return 0;
+//}
+
+
+//14、题目描述：输入一个人的出生日期（包括年月日），将该生日中的年、月、日分别输出。
+//输入描述：输入只有一行，出生日期，包括年月日，年月日之间的数字没有分隔符。
+//输出描述：三行、第一行为出生年份，第二行为出生月份，第三行为出生日期，输出时如果月份或天数为1位数，需要在1位数前面补0。
+//示例：输入    20140225
+//输出
+//year = 2014
+//month = 02
+//date = 25
+//int main()
+//{
+//	int year = 0;
+//	int month =0;
+//	int date = 0;
+//	scanf("%4d%2d%2d", &year, &month, &date);
+//	printf("year=%d\n", year);
+//	printf("month=%02d\n", month);
+//	printf("date=%02d\n", date);
+//	return 0;
+//}
+
+//15、题目描述：不使用累计乘法的基础上，通过移位运算（ << )实现2的n次方的计算。
+//输入描述：多组输入，每一行输入整数n（0 <= n<31)。
+//输出描述：针对每组输入输出对应的2的n次方的结果。
+int main()
+{
+	int n = 0;
+	while (scanf("%d", &n) != EOF)
+	{
+		printf("%d\n", 1 << n);
+	}
+	return 0;
+}
